@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_welcome">
+    
+	<include 
+	    layout="@layout/common_top"/>
+	<LinearLayout 
+	    style="@style/match_width_height"
+	    android:orientation="vertical">
+	    <EditText 
+	        android:id="@+id/content"
+	        style="@style/match_width_auto_height"
+	        android:textColor="#f27f90"
+	        android:textColorHint="#f27f90"
+	        android:textSize="12sp"
+    	    android:inputType="textMultiLine"
+    	    android:layout_weight="1"
+    	    android:layout_marginLeft="20dp"
+    	    android:layout_marginRight="20dp"
+    	    android:layout_marginTop="40dp"
+    	    android:layout_marginBottom="40dp"
+    	    android:background="@drawable/bg_feedback_input"
+    	    android:gravity="top"
+	        android:hint="填写您的反馈意见……"/>
+	    <LinearLayout 
+	        style="@style/match_width_auto_height"
+    	    android:layout_weight="1"
+	        android:orientation="horizontal">
+	        <ImageView 
+	            android:id="@+id/submit"
+	            style="@style/auto_width_height"
+	            android:layout_weight="1"
+	            android:src="@drawable/btn_feedback_submit"/>
+	        <ImageView 
+	            android:id="@+id/call"
+	            style="@style/auto_width_height"
+	            android:layout_weight="1"
+	            android:src="@drawable/btn_feedback_call"/>
+	    </LinearLayout>
+	</LinearLayout>
+</LinearLayout>

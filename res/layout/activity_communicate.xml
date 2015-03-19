@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/body"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_welcome">
+    
+	<include 
+	    android:id="@+id/top"
+	    layout="@layout/common_top"/>
+	<LinearLayout 
+	    style="@style/match_width_height"
+	    android:layout_below="@id/top"
+	    android:layout_above="@+id/bottom"
+	    android:orientation="vertical">
+	    <ListView 
+	        android:id="@+id/list"
+	    	style="@style/match_width_auto_height"/>
+	</LinearLayout>
+	<LinearLayout 
+		android:id="@id/bottom"
+	    style="@style/match_width_auto_height"
+	    android:layout_alignParentBottom="true"
+	    android:orientation="vertical">
+		<include 
+		    android:id="@+id/common_bottom"
+		    layout="@layout/common_bottom"/>
+	    <EditText 
+	        android:id="@+id/input"
+	        android:visibility="gone"
+	        android:singleLine="true"
+	        style="@style/match_width_auto_height"/>
+	    <TextView 
+	        android:id="@+id/topic"
+	        style="@style/auto_width_height"
+	        android:visibility="gone"/>
+	</LinearLayout>
+</RelativeLayout>

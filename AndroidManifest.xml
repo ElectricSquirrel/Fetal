@@ -1,0 +1,129 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fetal"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:name="com.fetal.base.ApplicationBase"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity
+            android:name="com.fetal.activity.WelcomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.fetal.activity.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.RecordsetActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.ReportActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.MonitorActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.CommunicateActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.TopicActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.ShopActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.ConfirmActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.SettingActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.FeedbackActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.MemberActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.SimulateActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.HelpActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.AboutActivity"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.MixActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.MusicActivity"
+            android:screenOrientation="portrait"/>
+        <activity 
+            android:name="com.fetal.activity.TmusicActivity"
+            android:screenOrientation="portrait"/>
+		
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            
+            <!-- 
+            	QZoneWebShareAdapter表示一个继承自cn.sharesdk.tencent.qzone.QZoneWebShareAdapter
+            	的类，这个类可以监听到页面的生命周期，也可以获QQ空间网页分享权页面的各种UI控件。 
+            	开发者可以通过继承QZoneWebShareAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            -->
+            <meta-data android:name="QzoneWebShareAdapter" android:value="com.fetalmonitor.adapter.QzoneWebShareAdapter" />
+            
+			<!--
+            	如果集成QQ分享，或者使用QQ客户端来进行QQ空间的分享，须要在此处添加一个对ACTION_VIEW
+            	事件的过滤器，其中的scheme是“tencent”前缀再开发者应用的加上appId。如果此过滤器不设置，
+            	则分享结束以后不能得到正确的回调
+            -->
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <!-- 微信分享回调 -->
+        <activity
+            android:name="com.fetal.activity.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true" />
+        <service 
+            android:name="com.fetal.service.MovieService"
+            android:process=":convert"/>
+        <service 
+            android:name="com.fetal.service.RepeatService"
+            android:process=":convert"/>
+        <service 
+            android:name="com.fetal.service.MixService"
+            android:process=":convert"/>
+    </application>
+	<uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+</manifest>

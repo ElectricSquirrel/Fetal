@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_welcome">
+    
+	<include 
+	    android:id="@+id/top"
+	    layout="@layout/common_top"/>
+	<LinearLayout 
+	    style="@style/match_width_height"
+	    android:layout_below="@id/top"
+	    android:layout_above="@+id/bottom"
+	    android:orientation="vertical">
+	    <ListView 
+	        android:id="@+id/list"
+	    	style="@style/match_width_auto_height"/>
+	</LinearLayout>
+	<include 
+	    android:id="@id/bottom"
+	    layout="@layout/common_bottom"/>
+</RelativeLayout>

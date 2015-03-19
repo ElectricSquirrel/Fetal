@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout 
+        style="@style/auto_width_height"
+        android:padding="20dp"
+        android:orientation="horizontal">
+	    <ImageView 
+	        android:id="@+id/chart"
+	        style="@style/auto_width_height"
+	        android:src="@drawable/img_recordset_mix"/>
+	    <ImageView 
+	        style="@style/auto_width_height"
+	        android:layout_gravity="center"
+	        android:layout_margin="10dp"
+	        android:src="@drawable/img_recordset_arrow"/>
+	    <LinearLayout 
+	        style="@style/auto_width_height"
+	        android:layout_gravity="center"
+	        android:orientation="vertical">
+	        <TextView 
+	            android:id="@+id/date"
+	            style="@style/auto_width_height"
+	    		android:textSize="14sp"
+        		android:textColor="#fe90a9"
+        		android:text="6月14日"/>
+	        <TextView 
+	            android:id="@+id/record"
+	            style="@style/auto_width_height"
+	    		android:textSize="10sp"
+        		android:textColor="#fe90a9"
+        		android:text="2014-06-14 孕12周84天"/>
+	        <TextView 
+	            style="@style/auto_width_height"
+	    		android:textSize="10sp"
+        		android:textColor="#fe90a9"
+        		android:text="&#038;"/>
+	        <TextView 
+	            android:id="@+id/music"
+	            style="@style/auto_width_height"
+	    		android:textSize="10sp"
+        		android:textColor="#fe90a9"
+        		android:text="小宝宝"/>
+	    </LinearLayout>
+    </LinearLayout>
+	<ImageView 
+	    style="@style/match_width_auto_height"
+	    android:src="@drawable/img_recordset_line"/>
+</LinearLayout>
